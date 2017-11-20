@@ -87,6 +87,10 @@ Mỗi object lại là một câu hỏi :
 
 <img src = "https://i.imgur.com/FxwmGGd.png">  
 
+### 3.1 Phaser.Game  
+
+<img src = "https://i.imgur.com/QpIhr9Z.png">  
+
 | Tên | Kiểu | Mặc định | Mô tả |
 |--------------|-------|------|-------|
 | Width | Số / Chuỗi | 800 | Chiều rộng trò chơi ( pixel) |
@@ -97,10 +101,6 @@ Mỗi object lại là một câu hỏi :
 | Transparent | Boolean | False | Sử dụng Background Canvas trong suốt hoặc  không | 
 | Antialias | Boolean | True | Vẽ tất cả các kết cấu hình ảnh chống aliased hay không. Mặc định là cho kết cấu mịn, nhưng vô hiệu hóa nếu trò chơi của bạn có tính năng pixel. | 
 | PhysicsConfig | Object | NULL | Một vật cấu hình đối tượng để đáp ứng mặt Vật lý thực tế |  
-
-### 3.1 Phaser.Game  
-
-<img src = "https://i.imgur.com/QpIhr9Z.png">  
 
 ### 3.2	Phaser.State  
 
@@ -143,7 +143,7 @@ Thêm tệp JavaScript ('script') vào **Loader**. Các JavaScript được nạ
 
 <img src = "https://i.imgur.com/VRd8gCk.png">    
 
-Thêm 'hình ảnh' vào **Loader*  
+Thêm *hình ảnh* vào **Loader**  
 
 | Tên | Kiểu | Mô tả | 
 |--------------|-------|------|
@@ -188,7 +188,7 @@ Sau khi nạp xong các thành phần vào **Loader**. Hàm create sẽ chuyển
 
 <img src = "https://i.imgur.com/XoFeTN8.png">  
 
-- Tạo hàm createButton để custom button, gồm các params :  
+- Tạo hàm **createButton** để custom button, gồm các params :  
   <ul>
   <li>Game : Trò chơi được khởi tạo của chúng ta.</li>
   <li>String : Value của button.</li>
@@ -198,12 +198,12 @@ Sau khi nạp xong các thành phần vào **Loader**. Hàm create sẽ chuyển
   <li>H : chiều cao button.</li>
   <li>Callback : hàm được gọi khi click vào button.</li>  
   </ul>  
-- Game.world : Một trò chơi chỉ có một **world**. **World** là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn **stage** và có thể được bất kỳ kích thước. Bạn nhìn vào **world** thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên **world**. Theo mặc định, **world** được tạo cùng kích thước với **Stage** của bạn.  
-- Game.world.centerX :  
+- **Game.world** : Một trò chơi chỉ có một **world**. **World** là một nơi trừu tượng trong đó tất cả các đối tượng trò chơi sống. Nó không bị ràng buộc bởi các giới hạn **stage** và có thể được bất kỳ kích thước. Bạn nhìn vào **world** thông qua máy ảnh. Tất cả các đối tượng trò chơi sống trong thế giới ở các tọa độ trên **world**. Theo mặc định, **world** được tạo cùng kích thước với **Stage** của bạn.  
+- **Game.world.centerX** :  
 Lấy vị trí X tương ứng với điểm trung tâm của **world**.  
-- Game.world.centerY :  
+- **Game.world.centerY** :  
 Lấy vị trí Y tương ứng với điểm trung tâm của **world**.  
-- Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “**Play**” hàm callback sẽ được gọi và state chuyển thành MainMenu.  
+- Khi tạo xong các button đã được custom cho trò chơi . Khi click vào button “**Play**” hàm callback sẽ được gọi và state chuyển thành **MainMenu**.  
 ## 7. Mainmenu.js  
 
 <img src = "https://i.imgur.com/ZJVtM36.png">  
@@ -235,7 +235,7 @@ Lấy vị trí Y tương ứng với điểm trung tâm của **world**.
 
 <img src = "https://i.imgur.com/hfx4cRQ.png">  
 
-Với mỗi hàng ngang sẽ là 1 answerSet ( 1 bộ câu trả lời ) và ta có 4 bộ câu câu trả lời:  
+Với mỗi hàng ngang sẽ là 1 **answerSet** ( 1 bộ câu trả lời ) và ta có 4 bộ câu câu trả lời:  
 Số bộ trả lời còn tùy thuộc vào số từ của câu trả lời đúng :  
 Và code của trình tự này là :  
 
@@ -249,21 +249,21 @@ Và bây giờ ta chỉ cần thêm các bộ câu trả lời vào các button.
 
 <img src = "https://i.imgur.com/o2lD6Cr.png">  
 
-Khi click vào button sẽ gọi đến hàm checkAnswer để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm checkAnswer , quan trọng nhất là textClick (text hiển thị trên button) và answer(câu trả lời chính xác).  
+Khi click vào button sẽ gọi đến hàm **checkAnswer** để kiếm tra đáp án trong button có đúng hay không .Ta cần truyển thêm tham số cho hàm **checkAnswer** , quan trọng nhất là **textClick** (text hiển thị trên button) và **answer**(câu trả lời chính xác).  
 - **checkAnswer()**  
 
 <img src = "https://i.imgur.com/DgsKdFn.png">  
 
-Sau khi callback của button được gọi nó sẽ truyền param textClick(text-đáp án lựa chọn) và answer(text-đáp án chính xác). Ta sẽ kiểm tra đáp án lựa chọn có là chính xác không. 
-Nếu sai ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chọn sai hủy button(đáp án) đó, tăng câu sai thêm 1 . 
-Còn nếu đúng ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chính xác ,hủy groupButton ( danh sách các button đáp án ) , hủy text , tăng số đáp án chính xác lên 1 và quan trọng nhất là chạy hàm nextAnswerSet() .  
+Sau khi **callback** của button được gọi nó sẽ truyền param **textClick**(text-đáp án lựa chọn) và **answer**(text-đáp án chính xác). Ta sẽ kiểm tra đáp án lựa chọn có là chính xác không. 
+Nếu sai ta sử dụng **graphic** ( đồ họa trong Phaser ) để hiển thị hiệu ứng chọn sai hủy button(đáp án) đó, tăng câu sai thêm 1 . 
+Còn nếu đúng ta sử dụng graphic ( đồ họa trong Phaser ) để hiển thị hiệu ứng chính xác ,hủy groupButton ( danh sách các button đáp án ) , hủy text , tăng số đáp án chính xác lên 1 và quan trọng nhất là chạy hàm **nextAnswerSet**() .  
 - **nextAnswerSet()**  
 
 <img src = "https://i.imgur.com/Rf3JcrW.png">  
 
-Sau khi trả lời đúng ta sẽ tăng biến đếm bộ câu trả lời thêm 1 . Nếu bộ câu trả lời chưa vượt quá , khi đó ta reset hình ảnh gợi ý mới , button được thêm bộ câu trả lời mới và vẫn có hàm callback() đến checkAnswer và nếu checkAnswer đúng sẽ lại chạy đến hàm nextAnswerSet (đệ quy) .   
-Nó sẽ đệ quy như thế cho đến khi biến đếm bộ câu trả lời bị vượt quá số lượng. Khi này biến countSet(đếm câu hỏi) sẽ được tăng thêm 1 đơn vị. và nó sẽ nhảy sang câu hỏi tiếp theo với danh sách bộ câu trả lời mới.   
-Trường hợp tiếp theo là khi biến countSet bị vượt quá ( số câu hỏi là có giới hạn ) khi đó ta sẽ hiển thị thông báo là Unit đã hoàn thành.     
+Sau khi trả lời đúng ta sẽ tăng biến đếm bộ câu trả lời thêm 1 . Nếu bộ câu trả lời chưa vượt quá , khi đó ta reset hình ảnh gợi ý mới , button được thêm bộ câu trả lời mới và vẫn có hàm **callback()** đến **checkAnswer** và nếu **checkAnswer** đúng sẽ lại chạy đến hàm **nextAnswerSet** (đệ quy) .   
+Nó sẽ đệ quy như thế cho đến khi biến đếm bộ câu trả lời bị vượt quá số lượng. Khi này biến **countSet**(đếm câu hỏi) sẽ được tăng thêm 1 đơn vị. và nó sẽ nhảy sang câu hỏi tiếp theo với danh sách bộ câu trả lời mới.   
+Trường hợp tiếp theo là khi biến **countSet** bị vượt quá ( số câu hỏi là có giới hạn ) khi đó ta sẽ hiển thị thông báo là Unit đã hoàn thành.     
 # V.	REFERENCES
 https://phaser.io/  
 http://www.html5gamedevs.com/forum/14-phaser/  
