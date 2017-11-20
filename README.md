@@ -269,6 +269,8 @@ https://phaser.io/
 http://www.html5gamedevs.com/forum/14-phaser/  
 https://gamedevelopment.tutsplus.com/articles/how-to-learn-the-phaser-html5-game-engine--gamedev-13643  
 http://jquery.com/  
+# VI. Demo
+Link demo game : https://elearning-gamecom.000webhostapp.com
 
 
 
